@@ -33,7 +33,7 @@ export default function Faq() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-espresso">
               FAQ
             </p>
-            <h2 className="mt-6 max-w-sm font-serif text-4xl sm:text-5xl leading-[1.1] tracking-[-0.01em] text-charcoal">
+            <h2 className="mt-6 max-w-sm font-medium text-4xl sm:text-5xl leading-[1.1] tracking-[-0.01em] text-charcoal">
               Before you send your enquiry.
             </h2>
           </div>
@@ -47,7 +47,7 @@ export default function Faq() {
                 className="group border-t border-charcoal/15 py-6"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 [&::-webkit-details-marker]:hidden">
-                  <h3 className="font-serif text-xl sm:text-[1.375rem] leading-snug text-charcoal">
+                  <h3 className="font-medium text-xl sm:text-[1.375rem] leading-snug text-charcoal">
                     {item.question}
                   </h3>
                   {/* The plus rotates into a cross when the item is open. */}

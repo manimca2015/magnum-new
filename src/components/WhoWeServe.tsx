@@ -17,7 +17,7 @@ export default function WhoWeServe() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-espresso">
               Who we serve
             </p>
-            <h2 className="mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-[-0.01em] text-charcoal">
+            <h2 className="mt-6 font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-[-0.01em] text-charcoal">
               Built for professional
               <br />
               parts buyers.
@@ -38,13 +38,13 @@ export default function WhoWeServe() {
               href="#send-rfq"
               className="group flex min-h-[14rem] flex-col bg-sand p-6 transition duration-300 hover:bg-[#e5dcd0]"
             >
-              <span className="font-serif italic text-xs text-charcoal/45">
+              <span className="italic text-xs text-charcoal/45">
                 {item.number}
               </span>
 
               {/* mt-auto bottom-anchors the title, so a three-line card still
                   lines its last line up with the others. */}
-              <h3 className="mt-auto font-serif text-2xl leading-[1.25] text-charcoal">
+              <h3 className="mt-auto font-medium text-2xl leading-[1.25] text-charcoal">
                 {item.title}
               </h3>
 
@@ -52,7 +52,7 @@ export default function WhoWeServe() {
                 aria-hidden="true"
                 className="mt-6 self-end text-charcoal transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               >
-                ↗
+                ↗︎
               </span>
             </a>
           ))}

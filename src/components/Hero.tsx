@@ -43,14 +43,14 @@ export default function Hero() {
               className="inline-flex items-center justify-between gap-6 min-w-[15rem] border-2 border-white bg-white text-black px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] transition duration-300 hover:bg-transparent hover:text-white"
             >
               Send your RFQ
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">↗︎</span>
             </a>
             <a
               href="#whatsapp"
               className="inline-flex items-center justify-between gap-6 min-w-[15rem] border-2 border-white text-white px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] transition duration-300 hover:bg-white hover:text-black"
             >
               WhatsApp sales
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">↗︎</span>
             </a>
           </div>
 

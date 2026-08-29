@@ -46,7 +46,7 @@ export default function WhyMagnum() {
             Why Magnum
           </p>
 
-          <h2 className="mt-6 font-serif text-3xl sm:text-4xl lg:text-[3rem] leading-[1.1] tracking-[-0.01em] text-white">
+          <h2 className="mt-6 font-medium text-3xl sm:text-4xl lg:text-[3rem] leading-[1.1] tracking-[-0.01em] text-white">
             Commercial detail before commitment.
           </h2>
 
@@ -61,12 +61,12 @@ export default function WhyMagnum() {
                 key={item.number}
                 className="grid grid-cols-[3.5rem_1fr] items-baseline py-5"
               >
-                <span className="font-serif italic text-xs text-white/40">
+                <span className="italic text-xs text-white/40">
                   {item.number}
                 </span>
 
                 <div>
-                  <dt className="font-serif text-xl sm:text-[1.375rem] leading-snug text-white">
+                  <dt className="font-medium text-xl sm:text-[1.375rem] leading-snug text-white">
                     {item.title}
                   </dt>
                   <dd className="mt-1.5 text-[13px] leading-relaxed text-white/55">

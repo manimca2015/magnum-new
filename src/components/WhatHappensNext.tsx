@@ -29,11 +29,11 @@ export default function WhatHappensNext() {
         <div className="mt-8 grid grid-cols-1 gap-10 border-t border-charcoal/20 pt-12 sm:grid-cols-3 sm:gap-14">
           {steps.map((step) => (
             <div key={step.number}>
-              <span className="font-serif italic text-xs text-charcoal/45">
+              <span className="italic text-xs text-charcoal/45">
                 {step.number}
               </span>
 
-              <h3 className="mt-16 font-serif text-2xl lg:text-[1.75rem] leading-[1.2] text-charcoal">
+              <h3 className="mt-16 font-medium text-2xl lg:text-[1.75rem] leading-[1.2] text-charcoal">
                 {step.title}
               </h3>
 

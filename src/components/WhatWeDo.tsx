@@ -31,7 +31,7 @@ export default function WhatWeDo() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-espresso">
               What we do
             </p>
-            <h2 className="mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-[-0.01em] text-charcoal">
+            <h2 className="mt-6 font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-[-0.01em] text-charcoal">
               From part-number list
               <br />
               to shipment.
@@ -48,11 +48,11 @@ export default function WhatWeDo() {
         <div className="mt-14 grid grid-cols-1 border border-charcoal/15 md:grid-cols-3 md:divide-x md:divide-charcoal/15 divide-y divide-charcoal/15 md:divide-y-0">
           {capabilities.map((item) => (
             <article key={item.number} className="flex flex-col p-10 lg:p-12 lg:min-h-[22rem]">
-              <span className="font-serif italic text-sm text-charcoal/45">
+              <span className="italic text-sm text-charcoal/45">
                 {item.number}
               </span>
 
-              <h3 className="mt-12 lg:mt-16 font-serif text-2xl lg:text-[1.75rem] leading-[1.25] text-charcoal">
+              <h3 className="mt-12 lg:mt-16 font-medium text-2xl lg:text-[1.75rem] leading-[1.25] text-charcoal">
                 {item.title}
               </h3>
 

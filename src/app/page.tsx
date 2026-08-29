@@ -10,7 +10,6 @@ import WhatHappensNext from '@/components/WhatHappensNext';
 import Faq from '@/components/Faq';
 import ReadyToSource from '@/components/ReadyToSource';
 import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
 
 export default function Home() {
   return (
@@ -29,7 +28,6 @@ export default function Home() {
         <ReadyToSource />
       </main>
       <Footer />
-      <BackToTop />
     </div>
   );
 }

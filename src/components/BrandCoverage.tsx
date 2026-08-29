@@ -19,7 +19,7 @@ export default function BrandCoverage() {
               Brand coverage
             </p>
 
-            <h2 className="mt-6 max-w-[26rem] font-serif text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.12] tracking-[-0.01em] text-charcoal">
+            <h2 className="mt-6 max-w-[26rem] font-medium text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.12] tracking-[-0.01em] text-charcoal">
               Multiple vehicle lines. One consolidated order.
             </h2>
 
@@ -33,7 +33,7 @@ export default function BrandCoverage() {
               className="mt-8 inline-flex items-center justify-between gap-8 min-w-[17.5rem] border border-espresso bg-espresso px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition duration-300 hover:bg-transparent hover:text-espresso"
             >
               Check availability
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">↗︎</span>
             </a>
           </div>
 
@@ -45,7 +45,7 @@ export default function BrandCoverage() {
                   key={row.region}
                   className="grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3rem_8.5rem_1fr] items-center gap-x-4 gap-y-3 py-6 sm:py-7"
                 >
-                  <span className="font-serif italic text-xs text-charcoal/40">
+                  <span className="italic text-xs text-charcoal/40">
                     {row.number}
                   </span>
 
@@ -53,7 +53,7 @@ export default function BrandCoverage() {
                     {row.region}
                   </dt>
 
-                  <dd className="col-span-2 sm:col-span-1 font-serif text-xl sm:text-2xl leading-snug text-charcoal">
+                  <dd className="col-span-2 sm:col-span-1 font-medium text-xl sm:text-2xl leading-snug text-charcoal">
                     {row.brands.join(' · ')}
                   </dd>
                 </div>

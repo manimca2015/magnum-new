@@ -1,65 +1,100 @@
 import React from 'react';
 
-const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Capabilities', href: '#capabilities' },
-  { label: 'Brands', href: '#brands' },
-  { label: 'Send RFQ', href: '#send-rfq' },
+const contact = [
+  { icon: 'mail', label: 'trade@magnumautofz.com', href: 'mailto:trade@magnumautofz.com' },
+  { icon: 'mail', label: 'prosupply@magnumautofz.com', href: 'mailto:prosupply@magnumautofz.com' },
+  { icon: 'phone', label: '+971 56 900 9877', href: 'tel:+971569009877' },
+  {
+    icon: 'pin',
+    label: '4203E, 42nd floor, Aspin commercial tower, Sheikh Zayed Road, Dubai, UAE',
+  },
 ];
 
-const contact = [
-  { label: 'trade@magnumautofz.com', href: 'mailto:trade@magnumautofz.com' },
-  { label: '+971 56 900 9877', href: 'tel:+971569009877' },
-  { label: 'Dubai, UAE' },
+const exploreLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'What We Do', href: '/what-we-do' },
+  { label: 'Brands', href: '/brands' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'Send RFQ', href: '/contact' },
 ];
+
+const legalLinks = [
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Cookie Policy', href: '/cookie-policy' },
+];
+
+const iconProps = {
+  width: 15,
+  height: 15,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 2,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+  className: 'shrink-0 text-[#C9A961]',
+  'aria-hidden': true,
+};
+
+function Icon({ name }: { name: string }) {
+  if (name === 'phone') {
+    return (
+      <svg xmlns="http://www.w3.org/2000/svg" {...iconProps}>
+        <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+      </svg>
+    );
+  }
+
+  if (name === 'pin') {
+    return (
+      <svg xmlns="http://www.w3.org/2000/svg" {...iconProps}>
+        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+        <circle cx="12" cy="10" r="3" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" {...iconProps}>
+      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-pitch py-14 sm:py-16">
-      <div className="mx-auto w-full max-w-7xl px-6">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
-          {/* Logo */}
-          <div className="lg:col-span-3 flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white">
-              <span className="text-lg font-bold text-white">M</span>
-            </div>
-            <div>
-              <div className="text-sm font-semibold tracking-wide text-white">MAGNUM</div>
-              <div className="text-xs tracking-[0.28em] text-white/70">AUTO</div>
-            </div>
-          </div>
-
-          {/* Blurb */}
-          <p className="lg:col-span-4 max-w-sm text-[14px] leading-[1.7] text-white/60">
+    <footer className="border-t border-white/10 bg-black px-4 py-16 text-[#F5F3EE] sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+        {/* Brand */}
+        <div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            alt="Magnum Auto FZE"
+            className="mb-3 h-11 w-auto max-w-[160px] object-contain"
+            src="/magnum-footer-logo.png"
+          />
+          <h2 className="text-2xl font-semibold">
+            Genuine automotive spare parts, trusted by buyers worldwide.
+          </h2>
+          <p className="mt-4 max-w-lg text-sm leading-7 text-[#F5F3EE]/80">
             Genuine automotive spare parts and lubricants for international wholesale
             supply, consolidated and exported from Dubai.
           </p>
+        </div>
 
-          {/* Navigation */}
-          <nav className="lg:col-span-2">
-            <ul className="space-y-4">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-[13px] uppercase tracking-[0.1em] text-white/70 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Contact */}
-          <ul className="lg:col-span-3 space-y-4">
+        {/* Contact */}
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C9A961]">
+            Contact
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm text-[#F5F3EE]/80">
             {contact.map((item) => (
-              <li
-                key={item.label}
-                className="text-[13px] uppercase tracking-[0.1em] text-white/70"
-              >
+              <li key={item.label} className="flex items-center gap-2">
+                <Icon name={item.icon} />
                 {item.href ? (
-                  <a href={item.href} className="transition-colors hover:text-white">
+                  <a href={item.href} className="hover:text-white">
                     {item.label}
                   </a>
                 ) : (
@@ -70,18 +105,41 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Legal */}
-        <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-start sm:justify-between sm:gap-10">
-          <p className="max-w-4xl text-[11px] leading-[1.6] text-white/35">
-            All trademarks and vehicle manufacturer names are the property of their
-            respective owners. Magnum Auto is an independent automotive spare parts
-            distributor and is not affiliated with or endorsed by the manufacturers listed
-            unless expressly stated.
-          </p>
-          <p className="shrink-0 text-[11px] text-white/35">
-            © {new Date().getFullYear()} Magnum Auto
-          </p>
+        {/* Explore */}
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C9A961]">
+            Explore
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm text-[#F5F3EE]/80">
+            {exploreLinks.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} className="hover:text-white">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        {/* Legal */}
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C9A961]">
+            Legal
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm text-[#F5F3EE]/80">
+            {legalLinks.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} className="hover:text-white">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-sm text-[#F5F3EE]/70">
+        <p>© 2026 Magnum Auto. All rights reserved.</p>
       </div>
     </footer>
   );

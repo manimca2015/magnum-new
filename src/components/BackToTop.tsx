@@ -25,11 +25,11 @@ export default function BackToTop() {
       aria-label="Back to top"
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
-      className={`fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center bg-bark text-lg text-white shadow-lg transition-all duration-300 hover:bg-cocoa focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
+      className={`fixed bottom-[8.75rem] right-6 sm:bottom-[9.5rem] sm:right-8 z-50 flex h-12 w-12 items-center justify-center bg-bark text-lg text-white shadow-lg transition-all duration-300 hover:bg-cocoa focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
         visible ? 'opacity-100 translate-y-0' : 'pointer-events-none opacity-0 translate-y-3'
       }`}
     >
-      <span aria-hidden="true">↑</span>
+      <span aria-hidden="true">↑︎</span>
     </button>
   );
 }

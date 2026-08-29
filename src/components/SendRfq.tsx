@@ -17,22 +17,50 @@ const inputClass =
 const labelClass =
   'block text-[10px] font-semibold uppercase tracking-[0.16em] text-espresso';
 
-export default function SendRfq() {
+type Variant = 'dark' | 'light';
+
+/* 'light' is used on the contact page, where the section sits on cream. */
+const theme = {
+  dark: {
+    section: 'bg-bark',
+    eyebrow: 'text-white/60',
+    heading: 'text-white',
+    body: 'text-white/70',
+    chip: 'border-white/25 text-white',
+    rule: 'border-white/20',
+    contact: 'text-white',
+    card: 'bg-shell',
+  },
+  light: {
+    section: 'bg-cream',
+    eyebrow: 'text-espresso',
+    heading: 'text-charcoal',
+    body: 'text-ink',
+    chip: 'border-charcoal/25 text-charcoal',
+    rule: 'border-charcoal/20',
+    contact: 'text-charcoal',
+    card: 'bg-white border border-charcoal/10',
+  },
+};
+
+export default function SendRfq({ variant = 'dark' }: { variant?: Variant }) {
+  const t = theme[variant];
+
   return (
-    <section id="send-rfq" className="w-full bg-bark py-14 sm:py-16">
+    <section id="send-rfq" className={`w-full ${t.section} py-14 sm:py-16`}>
       <div className="mx-auto w-full max-w-7xl px-6">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left — pitch and contact */}
           <div className="lg:col-span-5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/60">
+            <p className={`text-[11px] font-semibold uppercase tracking-[0.22em] ${t.eyebrow}`}>
               Send your RFQ
             </p>
 
-            <h2 className="mt-6 max-w-sm font-serif text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.1] tracking-[-0.01em] text-white">
+            <h2 className={`mt-6 max-w-sm font-medium text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.1] tracking-[-0.01em] ${t.heading}`}>
               Already have a part-number list?
             </h2>
 
-            <p className="mt-5 max-w-md text-[15px] leading-[1.7] text-white/70">
+            <p className={`mt-5 max-w-md text-[15px] leading-[1.7] ${t.body}`}>
               Upload it directly. Our sales team will review the brands, quantities,
               availability and expected lead times.
             </p>
@@ -41,14 +69,14 @@ export default function SendRfq() {
               {fileTypes.map((type) => (
                 <li
                   key={type}
-                  className="border border-white/25 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-white"
+                  className={`border px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] ${t.chip}`}
                 >
                   {type}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8 space-y-2 border-t border-white/20 pt-6 font-serif text-xl text-white">
+            <div className={`mt-8 space-y-2 border-t ${t.rule} pt-6 font-medium text-xl ${t.contact}`}>
               <p>
                 <a href="mailto:trade@magnumautofz.com" className="hover:underline">
                   trade@magnumautofz.com
@@ -64,7 +92,7 @@ export default function SendRfq() {
 
           {/* Right — RFQ form */}
           <div className="lg:col-span-7">
-            <form className="bg-shell p-8 sm:p-9 lg:p-10">
+            <form className={`${t.card} p-8 sm:p-9 lg:p-10`}>
               <div className="grid grid-cols-1 gap-x-12 gap-y-6 sm:grid-cols-2">
                 {fields.map((field) => (
                   <div key={field.id}>
@@ -92,7 +120,7 @@ export default function SendRfq() {
                   aria-hidden="true"
                   className="flex h-10 w-10 shrink-0 items-center justify-center border border-charcoal/25 text-bark"
                 >
-                  ↑
+                  ↑︎
                 </span>
                 <span>
                   <span className="block text-[13px] font-bold uppercase tracking-[0.12em] text-charcoal">
@@ -129,7 +157,7 @@ export default function SendRfq() {
                 className="mt-6 flex w-full items-center justify-between bg-bark px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-white transition duration-300 hover:bg-cocoa"
               >
                 Submit RFQ
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">↗︎</span>
               </button>
             </form>
           </div>

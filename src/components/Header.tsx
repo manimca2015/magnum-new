@@ -1,6 +1,16 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'What We Do', href: '/what-we-do' },
+  { label: 'Brands', href: '/brands' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'Send RFQ', href: '/contact' },
+];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,25 +45,25 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-white/80 hover:text-white text-sm font-medium tracking-wide transition">
-            ABOUT
-          </a>
-          <a href="#capabilities" className="text-white/80 hover:text-white text-sm font-medium tracking-wide transition">
-            CAPABILITIES
-          </a>
-          <a href="#brands" className="text-white/80 hover:text-white text-sm font-medium tracking-wide transition">
-            BRANDS
-          </a>
-          <a href="#send-rfq" className="text-white/80 hover:text-white text-sm font-medium tracking-wide transition">
-            SEND RFQ
-          </a>
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-white/80 hover:text-white text-sm font-medium uppercase tracking-wide transition"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         {/* Submit Enquiry Button */}
-        <button className="inline-flex items-center gap-3 border-2 border-white text-white px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] hover:bg-white hover:text-black transition duration-300">
-          SUBMIT ENQUIRY <span aria-hidden="true">↗</span>
-        </button>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-3 border-2 border-white text-white px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] hover:bg-white hover:text-black transition duration-300"
+        >
+          SUBMIT ENQUIRY <span aria-hidden="true">↗︎</span>
+        </Link>
       </div>
     </header>
   );

@@ -9,7 +9,7 @@ export default function ReadyToSource() {
         </p>
 
         <div className="mt-5 grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
-          <h2 className="lg:col-span-5 font-serif text-4xl sm:text-5xl leading-[1.1] tracking-[-0.01em] text-white">
+          <h2 className="lg:col-span-5 font-medium text-4xl sm:text-5xl leading-[1.1] tracking-[-0.01em] text-white">
             Have an RFQ ready?
           </h2>
 
@@ -24,7 +24,7 @@ export default function ReadyToSource() {
               className="inline-flex items-center justify-between gap-10 min-w-[15.5rem] bg-shell px-8 py-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-charcoal transition duration-300 hover:bg-white"
             >
               Send your RFQ
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">↗︎</span>
             </a>
           </div>
         </div>

@@ -58,20 +58,20 @@ export default function About() {
                 className="inline-flex items-center justify-between gap-8 min-w-[15.5rem] border border-espresso bg-espresso px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition duration-300 hover:bg-transparent hover:text-espresso"
               >
                 Send your RFQ
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">↗︎</span>
               </a>
               <a
                 href="#capabilities"
                 className="inline-flex items-center justify-between gap-8 min-w-[15.5rem] border border-navy/25 px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-navy transition duration-300 hover:bg-navy hover:text-white"
               >
                 See what we supply
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">→︎</span>
               </a>
             </div>
           </div>
 
           {/* Right — track record */}
-          <div className="rounded-3xl bg-navy p-8 sm:p-9 lg:p-10 lg:col-span-6">
+          <div className="rounded-3xl bg-cocoa p-8 sm:p-9 lg:p-10 lg:col-span-6">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
               Our track record
             </p>
