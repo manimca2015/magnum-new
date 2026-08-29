@@ -52,7 +52,7 @@ export default function WhatWeDo() {
                 {item.number}
               </span>
 
-              <h3 className="mt-12 lg:mt-16 font-medium text-2xl lg:text-[1.75rem] leading-[1.25] text-charcoal">
+              <h3 className="mt-6 lg:mt-8 font-medium text-2xl lg:text-[1.75rem] leading-[1.25] text-charcoal">
                 {item.title}
               </h3>
 

@@ -33,7 +33,7 @@ export default function WhatHappensNext() {
                 {step.number}
               </span>
 
-              <h3 className="mt-16 font-medium text-2xl lg:text-[1.75rem] leading-[1.2] text-charcoal">
+              <h3 className="mt-8 font-medium text-2xl lg:text-[1.75rem] leading-[1.2] text-charcoal">
                 {step.title}
               </h3>
 

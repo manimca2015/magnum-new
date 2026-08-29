@@ -1,7 +1,5 @@
 import React from 'react';
 
-const fileTypes = ['XLS', 'XLSX', 'CSV', 'PDF'];
-
 const fields = [
   { id: 'name', label: 'Full name', placeholder: 'Your name', type: 'text', autoComplete: 'name' },
   { id: 'company', label: 'Company', placeholder: 'Company name', type: 'text', autoComplete: 'organization' },
@@ -26,7 +24,6 @@ const theme = {
     eyebrow: 'text-white/60',
     heading: 'text-white',
     body: 'text-white/70',
-    chip: 'border-white/25 text-white',
     rule: 'border-white/20',
     contact: 'text-white',
     card: 'bg-shell',
@@ -36,7 +33,6 @@ const theme = {
     eyebrow: 'text-espresso',
     heading: 'text-charcoal',
     body: 'text-ink',
-    chip: 'border-charcoal/25 text-charcoal',
     rule: 'border-charcoal/20',
     contact: 'text-charcoal',
     card: 'bg-white border border-charcoal/10',
@@ -65,16 +61,6 @@ export default function SendRfq({ variant = 'dark' }: { variant?: Variant }) {
               availability and expected lead times.
             </p>
 
-            <ul className="mt-6 flex flex-wrap gap-3">
-              {fileTypes.map((type) => (
-                <li
-                  key={type}
-                  className={`border px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] ${t.chip}`}
-                >
-                  {type}
-                </li>
-              ))}
-            </ul>
 
             <div className={`mt-8 space-y-2 border-t ${t.rule} pt-6 font-medium text-xl ${t.contact}`}>
               <p>

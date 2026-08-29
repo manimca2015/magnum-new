@@ -18,7 +18,7 @@ const exploreLinks = [
   { label: 'What We Do', href: '/what-we-do' },
   { label: 'Brands', href: '/brands' },
   { label: 'Resources', href: '/resources' },
-  { label: 'Send RFQ', href: '/contact' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 const legalLinks = [

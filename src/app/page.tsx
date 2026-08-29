@@ -23,8 +23,8 @@ export default function Home() {
         <WhyMagnum />
         <WhoWeServe />
         <SendRfq />
-        <WhatHappensNext />
         <Faq />
+        <WhatHappensNext />
         <ReadyToSource />
       </main>
       <Footer />

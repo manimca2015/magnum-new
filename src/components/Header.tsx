@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -10,11 +11,17 @@ const navLinks = [
   { label: 'What We Do', href: '/what-we-do' },
   { label: 'Brands', href: '/brands' },
   { label: 'Resources', href: '/resources' },
-  { label: 'Send RFQ', href: '/contact' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  /* "/" must match exactly; deeper routes stay active on their child pages
+     (e.g. /resources/some-post keeps Resources lit). */
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href + '/');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -48,15 +55,23 @@ export default function Header() {
 
         {/* Navigation */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-white/80 hover:text-white text-sm font-medium uppercase tracking-wide transition"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                aria-current={active ? 'page' : undefined}
+                className={`text-sm font-medium uppercase tracking-wide transition ${
+                  active
+                    ? 'text-white underline decoration-white/50 underline-offset-[10px]'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Submit Enquiry Button */}
