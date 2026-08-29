@@ -3,7 +3,8 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ReadyToSource from '@/components/ReadyToSource';
-import Carousel, { type Slide } from '@/components/Carousel';
+import Carousel from '@/components/Carousel';
+import { gallerySlides } from '@/lib/gallery';
 
 export const metadata: Metadata = {
   title: 'About | MAGNUM AUTO',
@@ -11,33 +12,6 @@ export const metadata: Metadata = {
     'Magnum Auto FZE has supplied genuine spare parts and lubricants to trade buyers from Dubai since 2014, sourcing across 15+ vehicle brands and shipping to 40+ countries.',
 };
 
-const slides: Slide[] = [
-  {
-    src: '/about/gallery1.webp',
-    alt: 'Magnum Auto operations in Dubai',
-    caption: '',
-  },
-  {
-    src: '/about/gallery2.webp',
-    alt: 'Magnum Auto operations in Dubai',
-    caption: '',
-  },
-  {
-    src: '/about/gallery3.webp',
-    alt: 'Magnum Auto operations in Dubai',
-    caption: '',
-  },
-  {
-    src: '/about/gallery4.webp',
-    alt: 'Magnum Auto operations in Dubai',
-    caption: '',
-  },
-  {
-    src: '/about/gallery5.webp',
-    alt: 'Magnum Auto operations in Dubai',
-    caption: '',
-  },
-];
 
 const timeline = [
   {
@@ -93,13 +67,13 @@ export default function About() {
               Company Story
             </p>
 
-            <div className="mt-6 grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
-              <div className="lg:col-span-6">
-                <h1 className="font-medium text-4xl leading-[1.12] tracking-[-0.01em] text-white sm:text-5xl">
-                  Twelve years supplying genuine parts out of Dubai.
-                </h1>
+            <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+              <h1 className="lg:col-span-6 font-medium text-4xl leading-[1.12] tracking-[-0.01em] text-white sm:text-5xl">
+                Twelve years supplying genuine parts out of Dubai.
+              </h1>
 
-                <p className="mt-8 max-w-xl text-[15px] leading-[1.8] text-white/75">
+              <div className="lg:col-span-6 lg:self-end">
+                <p className="max-w-xl text-[15px] leading-[1.8] text-white/75">
                   Magnum Auto FZE started in 2014 supplying genuine spare parts and
                   lubricants to trade buyers. Today we source across 15+ vehicle brands,
                   consolidate multi-brand orders into single shipments, and ship to more
@@ -117,12 +91,14 @@ export default function About() {
                   </p>
                 </div>
               </div>
-
-              {/* Image gallery */}
-              <div className="lg:col-span-6">
-                <Carousel slides={slides} className="aspect-[4/3]" />
-              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Image gallery */}
+        <section className="w-full bg-shell px-6 py-14 sm:py-16">
+          <div className="mx-auto w-full max-w-7xl">
+            <Carousel slides={gallerySlides} />
           </div>
         </section>
 

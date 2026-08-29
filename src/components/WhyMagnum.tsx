@@ -1,4 +1,5 @@
 import React from 'react';
+import WhyMagnumSlider from '@/components/WhyMagnumSlider';
 
 const reasons = [
   {
@@ -23,22 +24,8 @@ export default function WhyMagnum() {
     /* Full-bleed: the image runs to the left viewport edge, the panel to the right. */
     <section id="why-magnum" className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr]">
-        {/* Left — warehouse image with a footer caption bar */}
-        <div
-          className="relative flex min-h-[22rem] flex-col justify-end bg-cover bg-center lg:min-h-[34rem]"
-          style={{ backgroundImage: 'url(/warehouse-hero.webp)' }}
-        >
-          <div className="absolute inset-0 bg-black/25"></div>
-
-          <div className="relative z-10 px-8 pb-8 sm:px-12 sm:pb-10">
-            <div className="border-t border-white/25 pt-5">
-              <div className="flex items-center justify-between gap-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
-                <span>Dubai, UAE</span>
-                <span>Export operations</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Left — auto-advancing gallery with the caption bar */}
+        <WhyMagnumSlider />
 
         {/* Right — reasons panel */}
         <div className="flex flex-col justify-center bg-bark px-8 py-12 sm:px-12 sm:py-14 lg:px-16 lg:py-16">

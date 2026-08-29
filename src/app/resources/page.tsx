@@ -27,7 +27,7 @@ export default function Resources() {
 
             <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
               <h1 className="lg:col-span-7 font-medium text-4xl leading-[1.12] tracking-[-0.01em] text-white sm:text-5xl">
-                Notes from the trade desk.
+                Lorem ipsum dolor sit amet.
               </h1>
 
               <p className="lg:col-span-5 lg:self-end max-w-md text-[15px] leading-[1.8] text-white/75">
