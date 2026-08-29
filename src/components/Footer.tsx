@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const contact = [
   { icon: 'mail', label: 'trade@magnumautofz.com', href: 'mailto:trade@magnumautofz.com' },
@@ -69,12 +71,15 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
         {/* Brand */}
         <div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            alt="Magnum Auto FZE"
-            className="mb-3 h-11 w-auto max-w-[160px] object-contain"
-            src="/magnum-footer-logo.png"
-          />
+          <Link href="/" aria-label="Magnum Auto — home" className="mb-3 inline-block">
+            <Image
+              src="/magnum-footer-logo.png"
+              alt="Magnum Auto FZE"
+              width={230}
+              height={60}
+              className="h-11 w-auto max-w-[160px] object-contain"
+            />
+          </Link>
           <h2 className="text-2xl font-semibold">
             Genuine automotive spare parts, trusted by buyers worldwide.
           </h2>

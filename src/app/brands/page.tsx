@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ReadyToSource from '@/components/ReadyToSource';
+import { coverage } from '@/lib/brands';
 
 export const metadata: Metadata = {
   title: 'Brands | MAGNUM AUTO',
@@ -10,13 +11,6 @@ export const metadata: Metadata = {
     'Genuine parts coverage across Korean, Japanese, American, European and Chinese vehicle lines, consolidated and exported from Dubai.',
 };
 
-const coverage = [
-  { number: '01', region: 'Korean', brands: ['Hyundai', 'Kia', 'Genesis'] },
-  { number: '02', region: 'Japanese', brands: ['Toyota', 'Nissan', 'Mazda', 'Mitsubishi'] },
-  { number: '03', region: 'American', brands: ['Chevrolet', 'Ford', 'Jeep'] },
-  { number: '04', region: 'European', brands: ['Renault', 'Peugeot', 'Citroën'] },
-  { number: '05', region: 'Chinese', brands: ['BYD', 'MG', 'Chery'] },
-];
 
 export default function Brands() {
   return (

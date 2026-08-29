@@ -48,7 +48,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'at-vero-eos-et-accusamus',
-    image: '/about/gallery5.webp',
+    image: '/about/gallery4.webp',
     alt: 'Freight being loaded for air and sea export',
     category: 'Export',
     date: '09 July 2026',

@@ -71,7 +71,7 @@ export default function About() {
           </div>
 
           {/* Right — track record */}
-          <div className="rounded-3xl bg-cocoa p-8 sm:p-9 lg:p-10 lg:col-span-6">
+          <div className="rounded-3xl bg-[#2e1a13] p-8 sm:p-9 lg:p-10 lg:col-span-6">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
               Our track record
             </p>

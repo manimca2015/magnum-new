@@ -14,33 +14,28 @@ export const metadata: Metadata = {
 const slides: Slide[] = [
   {
     src: '/about/gallery1.webp',
-    alt: 'Pallets of packed spare parts staged on the consolidation floor',
-    caption: 'Consolidation floor · Dubai, UAE',
+    alt: 'Magnum Auto operations in Dubai',
+    caption: '',
   },
   {
     src: '/about/gallery2.webp',
-    alt: 'Racked genuine parts inventory across multiple vehicle brands',
-    caption: 'Racked inventory · 15+ vehicle brands',
+    alt: 'Magnum Auto operations in Dubai',
+    caption: '',
   },
   {
     src: '/about/gallery3.webp',
-    alt: 'Parts being picked against part numbers for an order',
-    caption: 'Order picking · part-number led',
+    alt: 'Magnum Auto operations in Dubai',
+    caption: '',
   },
   {
     src: '/about/gallery4.webp',
-    alt: 'Cartons packed and repacked for export',
-    caption: 'Packing & repacking · export ready',
+    alt: 'Magnum Auto operations in Dubai',
+    caption: '',
   },
   {
     src: '/about/gallery5.webp',
-    alt: 'Freight being loaded for air and sea export',
-    caption: 'Export loading · air and sea freight',
-  },
-  {
-    src: '/about/gallery6.webp',
-    alt: 'Shipment staged for dispatch to international markets',
-    caption: 'Dispatch · 40+ destination markets',
+    alt: 'Magnum Auto operations in Dubai',
+    caption: '',
   },
 ];
 
@@ -98,13 +93,13 @@ export default function About() {
               Company Story
             </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
-              <h1 className="lg:col-span-6 font-medium text-4xl leading-[1.12] tracking-[-0.01em] text-white sm:text-5xl">
-                Twelve years supplying genuine parts out of Dubai.
-              </h1>
+            <div className="mt-6 grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
+              <div className="lg:col-span-6">
+                <h1 className="font-medium text-4xl leading-[1.12] tracking-[-0.01em] text-white sm:text-5xl">
+                  Twelve years supplying genuine parts out of Dubai.
+                </h1>
 
-              <div className="lg:col-span-6 lg:self-end">
-                <p className="max-w-xl text-[15px] leading-[1.8] text-white/75">
+                <p className="mt-8 max-w-xl text-[15px] leading-[1.8] text-white/75">
                   Magnum Auto FZE started in 2014 supplying genuine spare parts and
                   lubricants to trade buyers. Today we source across 15+ vehicle brands,
                   consolidate multi-brand orders into single shipments, and ship to more
@@ -122,16 +117,15 @@ export default function About() {
                   </p>
                 </div>
               </div>
+
+              {/* Image gallery */}
+              <div className="lg:col-span-6">
+                <Carousel slides={slides} className="aspect-[4/3]" />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Carousel */}
-        <section className="w-full bg-shell px-6 py-14 sm:py-16">
-          <div className="mx-auto w-full max-w-7xl">
-            <Carousel slides={slides} />
-          </div>
-        </section>
 
         {/* Timeline */}
         <section className="w-full bg-sand px-6 py-14 sm:py-16">

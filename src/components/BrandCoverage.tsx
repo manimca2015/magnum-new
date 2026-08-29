@@ -1,12 +1,6 @@
 import React from 'react';
+import { coverage } from '@/lib/brands';
 
-const coverage = [
-  { number: '01', region: 'Korean', brands: ['Hyundai', 'Kia', 'Genesis'] },
-  { number: '02', region: 'Japanese', brands: ['Toyota', 'Nissan', 'Mazda', 'Mitsubishi', 'Subaru'] },
-  { number: '03', region: 'American', brands: ['Ford', 'Chevrolet', 'Jeep'] },
-  { number: '04', region: 'European', brands: ['Renault', 'Peugeot', 'Citroën'] },
-  { number: '05', region: 'Chinese', brands: ['BYD', 'MG', 'Chery'] },
-];
 
 export default function BrandCoverage() {
   return (

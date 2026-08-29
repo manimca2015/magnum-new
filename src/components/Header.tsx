@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -34,15 +35,16 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center">
-            <span className="text-white font-bold text-lg">M</span>
-          </div>
-          <div>
-            <div className="text-white font-semibold text-sm tracking-wide">MAGNUM</div>
-            <div className="text-white/70 text-xs tracking-widest">AUTO</div>
-          </div>
-        </div>
+        <Link href="/" aria-label="Magnum Auto — home" className="flex items-center">
+          <Image
+            src="/magnum-logo.png"
+            alt="Magnum Auto"
+            width={230}
+            height={60}
+            priority
+            className="h-11 w-auto"
+          />
+        </Link>
 
         {/* Navigation */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">

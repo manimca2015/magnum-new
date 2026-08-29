@@ -55,10 +55,6 @@ export default async function ResourcePost(props: PageProps<'/resources/[slug]'>
                 ·
               </span>
               <span>{post.date}</span>
-              <span aria-hidden="true" className="text-white/30">
-                ·
-              </span>
-              <span>{post.readingTime}</span>
             </p>
 
             <h1 className="mt-5 font-medium text-4xl leading-[1.12] tracking-[-0.01em] text-white sm:text-5xl">
