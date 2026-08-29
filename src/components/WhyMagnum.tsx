@@ -41,7 +41,7 @@ export default function WhyMagnum() {
         </div>
 
         {/* Right — reasons panel */}
-        <div className="flex flex-col justify-center bg-cocoa px-8 py-12 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
+        <div className="flex flex-col justify-center bg-bark px-8 py-12 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/60">
             Why Magnum
           </p>

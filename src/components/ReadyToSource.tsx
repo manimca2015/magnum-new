@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ReadyToSource() {
   return (
-    <section className="w-full bg-truffle py-14 sm:py-16">
+    <section className="w-full bg-bark py-14 sm:py-16">
       <div className="mx-auto w-full max-w-7xl px-6">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/60">
           Ready to source?
