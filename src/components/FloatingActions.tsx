@@ -25,13 +25,37 @@ export default function FloatingActions() {
         </svg>
       </a>
 
-      {/* Request a quote */}
+      {/* Request a quote — icon only until hovered or focused */}
       <Link
         href="/contact"
-        className="inline-flex items-center gap-3 bg-bark px-5 py-3.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white shadow-lg transition-colors duration-300 hover:bg-cocoa focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+        aria-label="Request a quote"
+        className="group flex h-12 items-center rounded-full bg-bark pl-3.5 pr-3.5 text-white shadow-lg transition-colors duration-300 hover:bg-cocoa focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
       >
-        Request a Quote
-        <span aria-hidden="true">↗︎</span>
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="shrink-0"
+          aria-hidden="true"
+        >
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+          <path d="M14 2v5h6" />
+          <path d="M8 12h8" />
+          <path d="M8 16h5" />
+        </svg>
+
+        {/* max-width animates where width:auto cannot */}
+        <span
+          aria-hidden="true"
+          className="max-w-0 overflow-hidden whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.12em] opacity-0 transition-all duration-300 group-hover:ml-3 group-hover:max-w-[12rem] group-hover:opacity-100 group-focus-visible:ml-3 group-focus-visible:max-w-[12rem] group-focus-visible:opacity-100"
+        >
+          Request a Quote
+        </span>
       </Link>
     </div>
   );
