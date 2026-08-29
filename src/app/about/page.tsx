@@ -95,13 +95,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* Image gallery */}
-        <section className="w-full bg-shell px-6 py-14 sm:py-16">
-          <div className="mx-auto w-full max-w-7xl">
-            <Carousel slides={gallerySlides} />
-          </div>
-        </section>
-
 
         {/* Timeline */}
         <section className="w-full bg-sand px-6 py-14 sm:py-16">
@@ -159,13 +152,13 @@ export default function About() {
               Leadership
             </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
-              <h2 className="lg:col-span-6 max-w-lg font-medium text-3xl leading-[1.12] tracking-[-0.01em] text-charcoal sm:text-4xl">
-                The people who price and place your order.
-              </h2>
+            <div className="mt-6 grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
+              <div className="lg:col-span-6">
+                <h2 className="max-w-lg font-medium text-3xl leading-[1.12] tracking-[-0.01em] text-charcoal sm:text-4xl">
+                  The people who price and place your order.
+                </h2>
 
-              <div className="lg:col-span-6 lg:self-end">
-                <p className="max-w-xl text-[15px] leading-[1.8] text-ink">
+                <p className="mt-8 max-w-xl text-[15px] leading-[1.8] text-ink">
                   Our team runs supplier relationships, quotes RFQs, and oversees
                   consolidation and freight, so the person pricing your order is the one
                   who follows it to dispatch.
@@ -179,6 +172,11 @@ export default function About() {
                     Commercial strategy, operations, and buyer support.
                   </p>
                 </div>
+              </div>
+
+              {/* Image gallery */}
+              <div className="lg:col-span-6">
+                <Carousel slides={gallerySlides} className="aspect-[4/3]" />
               </div>
             </div>
           </div>
