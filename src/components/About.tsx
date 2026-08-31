@@ -3,12 +3,12 @@ import React from 'react';
 const stats = [
   { value: '12+', label: 'Years of industry experience' },
   { value: '30+', label: 'Countries supplied' },
-  { value: '7+', label: 'Core vehicle brands' },
+  { value: '11', label: 'Automotive brands supplied' },
   { value: '2,000+', label: 'Shipments' },
 ];
 
 const highlights = [
-  '100% genuine parts, sourced through OEM and authorised distributor channels',
+  '100% genuine parts through OEM and authorised distributor channels',
   'Dubai-based consolidation and worldwide export',
   'Multi-currency quotations and multilingual sales support',
 ];
@@ -29,7 +29,7 @@ export default function About() {
             </h2>
 
             <div className="mt-6 space-y-4 text-ink text-[15px] leading-[1.65]">
-              <p>
+              <p className="font-semibold">
                 Magnum Auto is led by a management team with more than 12 years of
                 experience in international automotive parts trading.
               </p>
@@ -40,15 +40,15 @@ export default function About() {
               </p>
               <p>
                 By adapting sourcing routes and responding quickly to supply-chain
-                disruptions, we have continued supporting customers with clear, realistic
-                commitments on quantities, lead times and delivery schedules throughout the
-                COVID-19 pandemic, global parts shortages and periods of geopolitical
-                disruption.
+                disruptions, we continued supporting customers throughout the COVID-19
+                pandemic, global parts shortages and periods of geopolitical disruption.
+                We maintained clear, realistic commitments on quantities, lead times and
+                delivery schedules.
               </p>
-              <p>
+              <p className="border-l-[3px] border-solid border-[#b98a2d] pl-4 font-semibold">
                 We aim to become the first-choice Dubai-based supplier for international
                 automotive parts buyers by simplifying sourcing, consolidating multi-brand
-                orders and providing continuous support throughout every purchase.
+                orders and providing continuous support from enquiry through delivery.
               </p>
             </div>
 
@@ -77,7 +77,7 @@ export default function About() {
             </p>
 
             <p className="mt-6 text-xl sm:text-2xl leading-snug text-white">
-              Twelve years of trade supply, in numbers.
+              International supply, measured in numbers.
             </p>
 
             <dl className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -3,21 +3,21 @@ import React from 'react';
 const capabilities = [
   {
     number: '01',
-    title: 'Genuine parts sourcing',
-    body: 'Stock and forward-order sourcing for genuine vehicle-manufacturer branded spare parts and lubricants.',
-    caption: 'Part-number led supply',
+    title: 'Direct sourcing',
+    body: 'Our access to manufacturer and authorised-distributor channels helps us secure the best available pricing and lead times while maintaining high fill rates across our core brands.',
+    caption: 'Best available price · Lead time · Fill rate',
   },
   {
     number: '02',
-    title: 'Wholesale supply & consolidation',
-    body: 'Requirements across several vehicle lines combined into a more efficient purchasing and shipment programme.',
-    caption: 'Multi-brand RFQ handling',
+    title: 'Logistics capability',
+    body: 'Our in-house logistics team manages repacking, multi-brand consolidation, documentation and worldwide export by air and sea.',
+    caption: 'Repacking · Consolidation · Worldwide export',
   },
   {
     number: '03',
-    title: 'Export coordination',
-    body: 'Packing, commercial documentation and air or sea freight arrangements managed from Dubai.',
-    caption: 'From order confirmation to dispatch',
+    title: 'Customer service',
+    body: 'Our multilingual team provides end-to-end support, regular order updates and multi-currency quotations throughout the purchasing process.',
+    caption: 'End-to-end · Multilingual · Multi-currency',
   },
 ];
 
@@ -32,15 +32,16 @@ export default function WhatWeDo() {
               What we do
             </p>
             <h2 className="mt-6 font-medium text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-[-0.01em] text-charcoal">
-              From part-number list
+              From your parts enquiry
               <br />
               to shipment.
             </h2>
           </div>
 
           <p className="lg:col-span-5 lg:self-end lg:pb-3 max-w-md text-[15px] leading-[1.7] text-ink">
-            One commercial workflow for sourcing, consolidating and exporting genuine
-            automotive spare parts.
+            We manage genuine auto spare parts orders through direct supply access,
+            in-house logistics and responsive customer service&mdash;all coordinated from
+            Dubai.
           </p>
         </div>
 

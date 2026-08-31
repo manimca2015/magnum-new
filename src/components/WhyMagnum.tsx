@@ -4,18 +4,18 @@ import WhyMagnumSlider from '@/components/WhyMagnumSlider';
 const reasons = [
   {
     number: '01',
-    title: 'Multi-brand capability',
-    body: 'Combine requirements across several vehicle lines.',
+    title: 'Broad supply access',
+    body: 'Our manufacturer and authorised-distributor relationships help us secure the best available pricing and lead times, with high fill rates across our core brands.',
   },
   {
     number: '02',
-    title: 'International sourcing',
-    body: 'Established supply routes across multiple markets.',
+    title: 'Proven international experience',
+    body: 'With 12+ years of experience and 2,000+ shipments to 30+ countries, we know how to manage multi-brand orders and changing supply conditions.',
   },
   {
     number: '03',
-    title: 'Dubai export base',
-    body: 'Consolidation, documentation and shipment coordination.',
+    title: 'One team from enquiry to shipment',
+    body: 'One team manages quotations, updates, repacking, consolidation, documentation and export—providing clear responsibility from enquiry to shipment.',
   },
 ];
 
@@ -34,12 +34,12 @@ export default function WhyMagnum() {
           </p>
 
           <h2 className="mt-6 font-medium text-3xl sm:text-4xl lg:text-[3rem] leading-[1.1] tracking-[-0.01em] text-white">
-            Commercial detail before commitment.
+            Supply access. Proven experience. Complete order support.
           </h2>
 
           <p className="mt-3 max-w-md text-[15px] leading-[1.7] text-white/70">
-            Every RFQ is evaluated across part numbers, quantities, sourcing route,
-            availability, lead time, packing and shipment requirements.
+            From supply access to worldwide export, every Magnum order is coordinated
+            from Dubai.
           </p>
 
           <dl className="mt-9 border-t border-white/15 divide-y divide-white/15">

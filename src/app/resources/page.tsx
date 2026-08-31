@@ -19,8 +19,14 @@ export default function Resources() {
 
       <main className="flex-1">
         {/* Dark band keeps the fixed header legible */}
-        <section className="w-full bg-bark px-6 pb-14 pt-32 sm:pb-16 sm:pt-36">
-          <div className="mx-auto w-full max-w-7xl">
+        <section
+          className="relative w-full bg-bark bg-cover bg-center px-6 pb-14 pt-32 sm:pb-16 sm:pt-36"
+          style={{ backgroundImage: 'url(/about/gallery4.webp)' }}
+        >
+          {/* Tint keeps the band on-palette and the copy readable */}
+          <div className="absolute inset-0 bg-bark/85"></div>
+
+          <div className="relative z-10 mx-auto w-full max-w-7xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/60">
               Resources
             </p>

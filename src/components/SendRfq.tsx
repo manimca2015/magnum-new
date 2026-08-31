@@ -20,7 +20,9 @@ type Variant = 'dark' | 'light';
 /* 'light' is used on the contact page, where the section sits on cream. */
 const theme = {
   dark: {
-    section: 'bg-bark',
+    section: 'bg-bark bg-cover bg-center',
+    image: '/Send-your-RFQ.png',
+    overlay: 'bg-bark/85',
     eyebrow: 'text-white/60',
     heading: 'text-white',
     body: 'text-white/70',
@@ -30,6 +32,8 @@ const theme = {
   },
   light: {
     section: 'bg-cream',
+    image: null,
+    overlay: null,
     eyebrow: 'text-espresso',
     heading: 'text-charcoal',
     body: 'text-ink',
@@ -43,8 +47,15 @@ export default function SendRfq({ variant = 'dark' }: { variant?: Variant }) {
   const t = theme[variant];
 
   return (
-    <section id="send-rfq" className={`w-full ${t.section} py-14 sm:py-16`}>
-      <div className="mx-auto w-full max-w-7xl px-6">
+    <section
+      id="send-rfq"
+      className={`relative w-full ${t.section} py-14 sm:py-16`}
+      style={t.image ? { backgroundImage: `url(${t.image})` } : undefined}
+    >
+      {/* Tint keeps the band on-palette and the copy readable */}
+      {t.overlay && <div className={`absolute inset-0 ${t.overlay}`}></div>}
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left — pitch and contact */}
           <div className="lg:col-span-5">
