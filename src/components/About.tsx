@@ -45,7 +45,7 @@ export default function About() {
                 We maintained clear, realistic commitments on quantities, lead times and
                 delivery schedules.
               </p>
-              <p className="border-l-[3px] border-solid border-[#b98a2d] pl-4 font-semibold">
+              <p className="font-semibold">
                 We aim to become the first-choice Dubai-based supplier for international
                 automotive parts buyers by simplifying sourcing, consolidating multi-brand
                 orders and providing continuous support from enquiry through delivery.
