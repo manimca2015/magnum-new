@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroVideo from '@/components/HeroVideo';
 
 export default function Hero() {
   return (
@@ -90,7 +91,7 @@ export default function Hero() {
               older iOS. Kept to a shallow 16:10 band so it sits beside the
               copy without stretching the fold. */}
           <div className="lg:col-span-5">
-            <div className="relative">
+            <div className="group/video relative">
               {/* A single white slab set down and to the left, giving the
                   video a crisp edge to sit against on the photograph. It steps
                   into the 48px column gap rather than toward the viewport
@@ -103,31 +104,7 @@ export default function Hero() {
                 className="pointer-events-none absolute inset-0 hidden -translate-x-3 translate-y-3 rounded-xl bg-white shadow-xl shadow-pitch/40 sm:block lg:-translate-x-[22px] lg:translate-y-[22px]"
               ></span>
 
-              {/* Same radius as the slab behind, so the two curves are
-                  concentric. overflow-hidden clips the video and the tint
-                  layer to the rounded frame. */}
-              <div className="relative isolate overflow-hidden rounded-xl border border-white/20 shadow-2xl shadow-pitch/50">
-                <video
-                  className="aspect-[16/9] w-full object-cover lg:aspect-[16/10]"
-                  width={960}
-                  height={540}
-                  poster="/magnum-hero-poster.webp"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  controls
-                  aria-label="Genuine parts crated and palletised in the Magnum Auto warehouse in Dubai"
-                >
-                  <source src="/magnum-hero.webm" type="video/webm" />
-                  <source src="/magnum-hero.mp4" type="video/mp4" />
-                </video>
-  
-                {/* Ties the footage into the navy palette. Click-through so it
-                    never sits between the viewer and the native controls. */}
-                <div className="pointer-events-none absolute inset-0 bg-bark/25 mix-blend-color" aria-hidden="true"></div>
-              </div>
+              <HeroVideo />
             </div>
           </div>
         </div>
