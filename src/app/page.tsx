@@ -6,7 +6,6 @@ import BrandCoverage from '@/components/BrandCoverage';
 import WhyMagnum from '@/components/WhyMagnum';
 import WhoWeServe from '@/components/WhoWeServe';
 import SendRfq from '@/components/SendRfq';
-import WhatHappensNext from '@/components/WhatHappensNext';
 import Faq from '@/components/Faq';
 import ReadyToSource from '@/components/ReadyToSource';
 import Footer from '@/components/Footer';
@@ -24,7 +23,6 @@ export default function Home() {
         <WhoWeServe />
         <SendRfq />
         <Faq />
-        <WhatHappensNext />
         <ReadyToSource />
       </main>
       <Footer />

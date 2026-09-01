@@ -91,31 +91,22 @@ export default function Hero() {
               copy without stretching the fold. */}
           <div className="lg:col-span-5">
             <div className="relative">
-              {/* Three solid slabs stacked behind the panel, down and to the
-                  left. That direction is deliberate: to the right there is
-                  only the 24px page gutter before the viewport edge, which
-                  caps the bands at a barely-readable 8px, while to the left
-                  sits the 48px column gap. Stepping into it gives 14px bands
-                  at lg, wide enough to actually register against a busy
-                  photograph. Painted furthest first: brass on the outside,
-                  then navy, then white giving the video a crisp edge to sit
-                  against. Below lg the
-                  panel is full width, so the steps fall back to 8px and stop
-                  at the gutter. */}
+              {/* A single white slab set down and to the left, giving the
+                  video a crisp edge to sit against on the photograph. It steps
+                  into the 48px column gap rather than toward the viewport
+                  edge, where only the 24px gutter would be available, so the
+                  band can be wide enough to read: 22px at lg, 12px below it.
+                  Rounded corners and a drop shadow separate it from the busy
+                  photograph behind. */}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 hidden -translate-x-6 translate-y-6 bg-[#bf882b] sm:block lg:-translate-x-[42px] lg:translate-y-[42px]"
-              ></span>
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 hidden -translate-x-4 translate-y-4 bg-navy-soft sm:block lg:-translate-x-7 lg:translate-y-7"
-              ></span>
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 hidden -translate-x-2 translate-y-2 bg-white sm:block lg:-translate-x-3.5 lg:translate-y-3.5"
+                className="pointer-events-none absolute inset-0 hidden -translate-x-3 translate-y-3 rounded-xl bg-white shadow-xl shadow-pitch/40 sm:block lg:-translate-x-[22px] lg:translate-y-[22px]"
               ></span>
 
-              <div className="relative isolate overflow-hidden border border-white/20 shadow-2xl shadow-pitch/50">
+              {/* Same radius as the slab behind, so the two curves are
+                  concentric. overflow-hidden clips the video and the tint
+                  layer to the rounded frame. */}
+              <div className="relative isolate overflow-hidden rounded-xl border border-white/20 shadow-2xl shadow-pitch/50">
                 <video
                   className="aspect-[16/9] w-full object-cover lg:aspect-[16/10]"
                   width={960}
