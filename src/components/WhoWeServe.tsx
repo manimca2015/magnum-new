@@ -1,28 +1,37 @@
 import React from 'react';
+/* Imported from /ssr so the icons stay renderable in a Server Component;
+   the default entry point needs the client-side icon context. */
+import {
+  GlobeHemisphereWest,
+  ShieldCheck,
+  Storefront,
+  Warehouse,
+  Wrench,
+} from '@phosphor-icons/react/dist/ssr';
 
 const audiences = [
   {
-    number: '01',
+    icon: Warehouse,
     title: 'Wholesalers & Stockists',
     body: 'Parts wholesalers and stockists purchasing for inventory, regular supply and resale.',
   },
   {
-    number: '02',
+    icon: Wrench,
     title: 'Service & Workshop Networks',
     body: 'Service and workshop groups sourcing genuine parts for maintenance and mechanical repair.',
   },
   {
-    number: '03',
+    icon: ShieldCheck,
     title: 'Insurance Parts Procurement Specialists',
     body: 'Specialist buyers coordinating genuine spare parts for insurer-approved accident-repair requirements.',
   },
   {
-    number: '04',
+    icon: Storefront,
     title: 'Multi-Brand Franchise Dealers',
     body: 'Franchise dealer groups requiring genuine spare parts across multiple vehicle brands and locations.',
   },
   {
-    number: '05',
+    icon: GlobeHemisphereWest,
     title: 'Parts Traders & Distributors',
     body: 'Importers, exporters, distributors and trading companies supplying parts within and across their markets.',
   },
@@ -47,46 +56,48 @@ export default function WhoWeServe() {
           </p>
         </div>
 
-        {/* Horizontal track. Below lg the row scrolls and snaps, one segment at
-            a time, which keeps the type readable instead of crushing five
-            columns into a phone. The negative margin lets it bleed to the
-            screen edge so the cut-off card reads as "there is more". */}
-        <div className="mt-14 -mx-6 overflow-x-auto px-6 pb-4 [scrollbar-width:none] lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
-          <ul className="relative flex min-w-max snap-x snap-mandatory gap-8 lg:grid lg:min-w-0 lg:grid-cols-5 lg:gap-10">
-            {audiences.map((item, i) => (
-              <li
-                key={item.number}
-                className="relative w-[17rem] shrink-0 snap-start lg:w-auto"
-              >
-                {/* One rail segment per hop, drawn from this marker edge to
-                    the next one across the gap, so it stays aligned whatever
-                    the column width works out to. A single absolute rule
-                    across the row could not do that once the grid gap ate
-                    into the column. The gradient arrives rather than fades,
-                    pulling the eye toward the next step. */}
-                {i < audiences.length - 1 && (
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute left-11 -right-8 top-[1.375rem] h-px bg-[linear-gradient(to_right,rgb(8_23_60/0.10),rgb(8_23_60/0.38))] lg:-right-10"
-                  ></span>
-                )}
-                <a href="#send-rfq" className="group block focus-visible:outline-none">
-                  {/* Sits above the segment, so the rail meets a clean edge. */}
-                  <span className="relative flex h-11 w-11 items-center justify-center bg-bark text-[11px] font-semibold tracking-[0.16em] text-white transition-colors duration-300 group-hover:bg-cocoa group-focus-visible:ring-2 group-focus-visible:ring-charcoal/40 group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-shell">
-                    {item.number}
-                  </span>
+        {/* Five separate cards, each its own bordered surface with a gap
+            between, rather than one continuous hairline strip. */}
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {audiences.map((item) => {
+            const Icon = item.icon;
 
-                  <h3 className="mt-7 font-bold text-xl leading-[1.2] tracking-[-0.01em] text-charcoal decoration-charcoal/30 underline-offset-[6px] transition group-hover:underline sm:text-[1.375rem]">
-                    {item.title}
-                  </h3>
+            return (
+            <a
+              key={item.title}
+              href="#send-rfq"
+              className="group flex min-h-[19rem] flex-col border border-charcoal/15 bg-cream p-6 transition duration-300 hover:border-charcoal/30 hover:bg-[#f1e7dc] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-charcoal/40"
+            >
+              <div className="flex items-start justify-between gap-4">
+                {/* Decorative, the title names the audience. One weight across
+                    all five so the row reads as a set. */}
+                <Icon
+                  size={30}
+                  weight="light"
+                  aria-hidden="true"
+                  className="text-bark transition-colors duration-300 group-hover:text-cocoa"
+                />
 
-                  <p className="mt-4 text-[13px] leading-[1.65] text-charcoal/65">
-                    {item.body}
-                  </p>
-                </a>
-              </li>
-            ))}
-          </ul>
+                <span
+                  aria-hidden="true"
+                  className="translate-y-1 text-sm text-charcoal/50 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                >
+                  ↗︎
+                </span>
+              </div>
+
+              {/* mt-auto bottom-anchors the title block, so a three-line card
+                  still lines its last line up with the others. */}
+              <h3 className="mt-auto pt-10 font-bold text-xl leading-[1.2] tracking-[-0.01em] text-charcoal">
+                {item.title}
+              </h3>
+
+              <p className="mt-4 text-[13px] leading-[1.65] text-charcoal/65">
+                {item.body}
+              </p>
+            </a>
+            );
+          })}
         </div>
       </div>
     </section>

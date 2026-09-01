@@ -29,25 +29,30 @@ export default function BrandCoverage() {
           {coverage.map((row) => (
             <article
               key={row.region}
-              className="group relative isolate flex min-h-[19rem] flex-col justify-end overflow-hidden bg-cocoa sm:min-h-[24rem]"
+              className="group relative isolate flex aspect-square flex-col justify-end overflow-hidden bg-cocoa"
             >
               {/* Decorative, so the alt is empty — the region name beside it
                   already carries the meaning. `sizes` matches the five-up
-                  desktop row so phones never fetch a full-width file. */}
-              <Image
-                src={row.image}
-                alt=""
-                fill
-                sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"
-                className="-z-10 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
+                  desktop row so phones never fetch a full-width file. A row
+                  without a photo keeps the navy card underneath instead of
+                  requesting a file that is not there. */}
+              {row.image && (
+                <Image
+                  src={row.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"
+                  className="-z-10 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              )}
 
-              {/* Navy tint, then a gradient that stays dark all the way to the
-                  top edge — the number sits up there and the photos are too
-                  bright for it to read against a thin tint. */}
-              <div className="absolute inset-0 -z-10 bg-bark/45 mix-blend-color" aria-hidden="true"></div>
+              {/* Navy tint, then a gradient weighted to the bottom where the
+                  type sits. Kept off the top two thirds so the photo is
+                  actually readable; the number up there carries its own text
+                  shadow rather than needing the whole card darkened. */}
+              <div className="absolute inset-0 -z-10 bg-bark/30 mix-blend-color" aria-hidden="true"></div>
               <div
-                className="absolute inset-0 -z-10 bg-gradient-to-t from-pitch/95 via-pitch/70 to-pitch/45 transition-colors duration-500 group-hover:via-pitch/80"
+                className="absolute inset-0 -z-10 bg-gradient-to-t from-pitch/92 via-pitch/45 to-pitch/10 transition-colors duration-500 group-hover:via-pitch/55"
                 aria-hidden="true"
               ></div>
 
