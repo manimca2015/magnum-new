@@ -38,7 +38,7 @@ export default function WhatWeDo() {
             </h2>
           </div>
 
-          <p className="lg:col-span-5 lg:self-end lg:pb-3 max-w-md text-[15px] leading-[1.7] text-ink">
+          <p className="lg:col-span-5 lg:self-end lg:pb-3 max-w-md border-l border-espresso/35 pl-6 text-[15px] leading-[1.7] text-ink">
             We manage genuine auto spare parts orders through direct supply access,
             in-house logistics and responsive customer service&mdash;all coordinated from
             Dubai.

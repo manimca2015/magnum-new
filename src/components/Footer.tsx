@@ -12,13 +12,13 @@ const contact = [
   },
 ];
 
+/* Mirrors the header: one-page anchors into the homepage sections. */
 const exploreLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'What We Do', href: '/what-we-do' },
-  { label: 'Brands', href: '/brands' },
-  { label: 'Resources', href: '/resources' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'Home', href: '/#home' },
+  { label: 'About', href: '/#about' },
+  { label: 'What We Do', href: '/#capabilities' },
+  { label: 'Brands', href: '/#brands' },
+  { label: 'Contact Us', href: '/#send-rfq' },
 ];
 
 const legalLinks = [
@@ -67,7 +67,7 @@ function Icon({ name }: { name: string }) {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black px-4 py-16 text-[#F5F3EE] sm:px-6 lg:px-8">
+    <footer className="border-t border-white/10 bg-bark px-4 py-16 text-[#F5F3EE] sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
         {/* Brand */}
         <div>

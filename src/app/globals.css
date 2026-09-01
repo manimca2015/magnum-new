@@ -9,20 +9,20 @@
 @theme {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-  /* Brand palette */
+  /* Brand palette — deep-navy tone built around #08173c. */
   --color-cream: #f7efe5;
   --color-sand: #ece5dc;
   --color-shell: #f8f5f0;
-  --color-cocoa: #2e1a13;
-  --color-bark: #4a271a;
-  --color-pitch: #1a1210;
-  --color-navy: #101f45;
-  --color-navy-soft: #1b2b55;
+  --color-cocoa: #050f2a;
+  --color-bark: #08173c;
+  --color-pitch: #030a1c;
+  --color-navy: #0e2352;
+  --color-navy-soft: #16305f;
   --color-gold: #c9a44c;
-  --color-espresso: #4a2a18;
+  --color-espresso: #0a1d4d;
   --color-ink: #3c4a6b;
-  --color-charcoal: #16130f;
-  --color-clay: #b08968;
+  --color-charcoal: #101828;
+  --color-clay: #4a6096;
 }
 
 @theme inline {
@@ -42,4 +42,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--default-font-family, var(--font-sans));
+}
+
+/* One-page navigation: anchor jumps land below the fixed header instead of
+   underneath it, and in-page links glide rather than snap. */
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

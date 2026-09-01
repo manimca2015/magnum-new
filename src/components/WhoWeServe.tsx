@@ -32,7 +32,8 @@ export default function WhoWeServe() {
   return (
     <section id="who-we-serve" className="w-full bg-shell py-14 sm:py-16">
       <div className="mx-auto w-full max-w-7xl px-6">
-        {/* Heading row */}
+        {/* Label left, standfirst set against it on the right, on the same
+            row. Same header rhythm the other sections use. */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-espresso">
@@ -40,36 +41,52 @@ export default function WhoWeServe() {
             </p>
           </div>
 
-          <p className="lg:col-span-6 max-w-xl border-l border-espresso/40 pl-6 text-[15px] leading-[1.7] text-ink">
+          <p className="max-w-xl border-l border-espresso/40 pl-6 text-[15px] leading-[1.7] text-ink lg:col-span-6">
             Supplying genuine automotive spare parts to trade, dealer, service and
             specialist procurement networks worldwide.
           </p>
         </div>
 
-        {/* Audience cards — one continuous strip; the gap-px on a tinted
-            container draws the hairlines at every column and row break. */}
-        <div className="mt-10 grid grid-cols-1 gap-px border border-charcoal/15 bg-charcoal/15 sm:grid-cols-2 lg:grid-cols-5">
-          {audiences.map((item) => (
-            <a
-              key={item.number}
-              href="#send-rfq"
-              className="flex min-h-[21rem] flex-col bg-cream p-7 transition duration-300 hover:bg-[#f1e7dc]"
-            >
-              <span className="font-bold text-5xl sm:text-6xl leading-none tracking-[-0.02em] text-charcoal/25">
-                {item.number}
-              </span>
+        {/* Horizontal track. Below lg the row scrolls and snaps, one segment at
+            a time, which keeps the type readable instead of crushing five
+            columns into a phone. The negative margin lets it bleed to the
+            screen edge so the cut-off card reads as "there is more". */}
+        <div className="mt-14 -mx-6 overflow-x-auto px-6 pb-4 [scrollbar-width:none] lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
+          <ul className="relative flex min-w-max snap-x snap-mandatory gap-8 lg:grid lg:min-w-0 lg:grid-cols-5 lg:gap-10">
+            {audiences.map((item, i) => (
+              <li
+                key={item.number}
+                className="relative w-[17rem] shrink-0 snap-start lg:w-auto"
+              >
+                {/* One rail segment per hop, drawn from this marker edge to
+                    the next one across the gap, so it stays aligned whatever
+                    the column width works out to. A single absolute rule
+                    across the row could not do that once the grid gap ate
+                    into the column. The gradient arrives rather than fades,
+                    pulling the eye toward the next step. */}
+                {i < audiences.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute left-11 -right-8 top-[1.375rem] h-px bg-[linear-gradient(to_right,rgb(8_23_60/0.10),rgb(8_23_60/0.38))] lg:-right-10"
+                  ></span>
+                )}
+                <a href="#send-rfq" className="group block focus-visible:outline-none">
+                  {/* Sits above the segment, so the rail meets a clean edge. */}
+                  <span className="relative flex h-11 w-11 items-center justify-center bg-bark text-[11px] font-semibold tracking-[0.16em] text-white transition-colors duration-300 group-hover:bg-cocoa group-focus-visible:ring-2 group-focus-visible:ring-charcoal/40 group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-shell">
+                    {item.number}
+                  </span>
 
-              {/* mt-auto bottom-anchors the title block, so a three-line card still
-                  lines its last line up with the others. */}
-              <h3 className="mt-auto font-bold text-xl sm:text-2xl leading-[1.2] tracking-[-0.01em] text-charcoal">
-                {item.title}
-              </h3>
+                  <h3 className="mt-7 font-bold text-xl leading-[1.2] tracking-[-0.01em] text-charcoal decoration-charcoal/30 underline-offset-[6px] transition group-hover:underline sm:text-[1.375rem]">
+                    {item.title}
+                  </h3>
 
-              <p className="mt-5 text-[13px] leading-[1.65] text-charcoal/65">
-                {item.body}
-              </p>
-            </a>
-          ))}
+                  <p className="mt-4 text-[13px] leading-[1.65] text-charcoal/65">
+                    {item.body}
+                  </p>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

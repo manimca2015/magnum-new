@@ -1,6 +1,6 @@
 import React from 'react';
-import { coreBrands, otherBrands } from '@/lib/brands';
-
+import Image from 'next/image';
+import { coverage } from '@/lib/brands';
 
 export default function BrandCoverage() {
   return (
@@ -22,53 +22,50 @@ export default function BrandCoverage() {
           </div>
         </div>
 
-        {/* Core brands — dark panel */}
-        <div className="mt-10 bg-cocoa px-6 pt-8 sm:px-8 sm:pt-10">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-            Core brands
-          </p>
+        {/* Coverage cards — vehicle photo behind, region and marques over it.
+            All five sit on one row from lg up, so the type is sized for a
+            narrow column. */}
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {coverage.map((row) => (
+            <article
+              key={row.region}
+              className="group relative isolate flex min-h-[19rem] flex-col justify-end overflow-hidden bg-cocoa sm:min-h-[24rem]"
+            >
+              {/* Decorative, so the alt is empty — the region name beside it
+                  already carries the meaning. `sizes` matches the five-up
+                  desktop row so phones never fetch a full-width file. */}
+              <Image
+                src={row.image}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"
+                className="-z-10 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
 
-          <div className="mt-6 grid grid-cols-2 border-t border-white/15 sm:grid-cols-3 lg:grid-cols-5">
-            {coreBrands.map((brand) => (
+              {/* Navy tint, then a gradient that stays dark all the way to the
+                  top edge — the number sits up there and the photos are too
+                  bright for it to read against a thin tint. */}
+              <div className="absolute inset-0 -z-10 bg-bark/45 mix-blend-color" aria-hidden="true"></div>
               <div
-                key={brand.name}
-                className="flex flex-col border-b border-white/10 px-4 pt-5 pb-10 sm:border-b-0 sm:border-r sm:last:border-r-0 sm:pb-16"
-              >
-                <span className="text-[11px] tracking-[0.12em] text-gold/70">
-                  {brand.number}
-                </span>
+                className="absolute inset-0 -z-10 bg-gradient-to-t from-pitch/95 via-pitch/70 to-pitch/45 transition-colors duration-500 group-hover:via-pitch/80"
+                aria-hidden="true"
+              ></div>
 
-                <span className="mt-10 text-center font-bold text-3xl sm:text-4xl leading-none tracking-[-0.02em] text-white">
-                  {brand.name}
-                </span>
+              <span className="absolute left-5 top-5 text-[13px] font-bold tracking-[0.22em] text-white [text-shadow:0_1px_3px_rgb(3_10_28/0.9)]">
+                {row.number}
+              </span>
+
+              <div className="px-5 pb-6">
+                <h3 className="text-2xl font-bold leading-none tracking-[-0.02em] text-white [text-shadow:0_2px_6px_rgb(3_10_28/0.75)] sm:text-[1.75rem]">
+                  {row.region}
+                </h3>
+
+                <p className="mt-3 text-[15px] font-medium leading-[1.55] tracking-[0.02em] text-white/90 [text-shadow:0_1px_3px_rgb(3_10_28/0.9)]">
+                  {row.brands.join(' · ')}
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Other brands — light panel */}
-        <div className="grid grid-cols-1 border-b border-charcoal/15 bg-shell lg:grid-cols-12">
-          <div className="px-6 py-8 sm:px-8 lg:col-span-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-espresso">
-              Other brands we supply
-            </p>
-            <p className="mt-2 text-[13px] leading-[1.6] text-charcoal/60">
-              Subject to requirement and availability
-            </p>
-          </div>
-
-          <div className="grid grid-cols-3 lg:col-span-8 lg:grid-cols-6">
-            {otherBrands.map((brand) => (
-              <div
-                key={brand}
-                className="flex items-center justify-center border-t border-l border-charcoal/15 px-3 py-7 lg:border-t-0"
-              >
-                <span className="font-bold text-lg sm:text-xl leading-none tracking-[-0.01em] text-charcoal">
-                  {brand}
-                </span>
-              </div>
-            ))}
-          </div>
+            </article>
+          ))}
         </div>
 
         {/* Consolidated export */}
