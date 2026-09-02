@@ -1,18 +1,49 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { gallerySlides } from '@/lib/gallery';
 
 const AUTOPLAY_MS = 5000;
 
+/* Sits at ~55% of the viewport on desktop, full width below that —
+   this keeps next/image from shipping a larger source than the slot needs. */
+const SIZES = '(min-width: 1024px) 55vw, 100vw';
+
 export default function WhyMagnumSlider() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  /* Only slides that have been shown get a real <Image>; the rest stay on
+     their inline placeholder until the carousel reaches them. */
+  const [mounted, setMounted] = useState<number[]>([0]);
+  /* Autoplay waits until the section is actually on screen. */
+  const [visible, setVisible] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
 
   const go = (next: number) => setIndex((next + gallerySlides.length) % gallerySlides.length);
 
   useEffect(() => {
-    if (paused) return;
+    const node = rootRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { rootMargin: '200px' }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const next = (index + 1) % gallerySlides.length;
+    setMounted((seen) => {
+      const added = [index, next].filter((i) => !seen.includes(i));
+      return added.length ? [...seen, ...added] : seen;
+    });
+  }, [index]);
+
+  useEffect(() => {
+    if (paused || !visible) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const timer = window.setInterval(
@@ -20,10 +51,11 @@ export default function WhyMagnumSlider() {
       AUTOPLAY_MS
     );
     return () => window.clearInterval(timer);
-  }, [paused]);
+  }, [paused, visible]);
 
   return (
     <div
+      ref={rootRef}
       role="region"
       aria-roledescription="carousel"
       aria-label="Magnum Auto operations"
@@ -31,18 +63,27 @@ export default function WhyMagnumSlider() {
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
-      className="relative flex min-h-[22rem] flex-col justify-end lg:min-h-[34rem]"
+      className="relative flex min-h-[22rem] flex-col justify-end overflow-hidden lg:min-h-[34rem]"
     >
       {gallerySlides.map((slide, i) => (
         <div
           key={slide.src}
           aria-hidden={i !== index}
-          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 ${
+          className={`absolute inset-0 transition-opacity duration-700 ${
             i === index ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ backgroundImage: `url(${slide.src})` }}
         >
-          <span className="sr-only">{slide.alt}</span>
+          {mounted.includes(i) && (
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              sizes={SIZES}
+              placeholder={slide.blurDataURL ? 'blur' : 'empty'}
+              blurDataURL={slide.blurDataURL}
+              className="object-cover"
+            />
+          )}
         </div>
       ))}
 

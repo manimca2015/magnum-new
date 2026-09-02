@@ -6,6 +6,8 @@ export type Slide = {
   src: string;
   alt: string;
   caption: string;
+  /* Tiny inline preview shown while the full image loads. */
+  blurDataURL?: string;
 };
 
 export default function Carousel({
