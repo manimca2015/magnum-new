@@ -77,7 +77,10 @@ export default function Footer() {
               alt="Magnum Auto FZE"
               width={169}
               height={44}
-              className="h-11 w-auto max-w-[160px] object-contain"
+              /* The footer sits on bark, so the brand mark is flattened to
+                 white — brightness-0 takes every fill to black, invert takes
+                 it to white, and the knockouts stay transparent. */
+              className="h-11 w-auto max-w-[160px] object-contain brightness-0 invert"
             />
           </Link>
           <h2 className="text-2xl font-semibold">
