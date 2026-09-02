@@ -101,11 +101,11 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" aria-label="Magnum Auto — home" className="flex items-center">
           <Image
-            src="/magnum-logo.png"
+            src="/magnum.svg"
             alt="Magnum Auto"
-            width={230}
-            height={60}
-            priority
+            width={169}
+            height={44}
+            preload
             className="h-11 w-auto"
           />
         </Link>

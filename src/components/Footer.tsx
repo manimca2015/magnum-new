@@ -73,10 +73,10 @@ export default function Footer() {
         <div>
           <Link href="/" aria-label="Magnum Auto — home" className="mb-3 inline-block">
             <Image
-              src="/magnum-footer-logo.png"
+              src="/magnum.svg"
               alt="Magnum Auto FZE"
-              width={230}
-              height={60}
+              width={169}
+              height={44}
               className="h-11 w-auto max-w-[160px] object-contain"
             />
           </Link>
