@@ -10,12 +10,14 @@ const AUTOPLAY_MS = 5000;
    this keeps next/image from shipping a larger source than the slot needs. */
 const SIZES = '(min-width: 1024px) 55vw, 100vw';
 
+/* True for the slide before, at, and after the current one. */
+function isNear(i: number, current: number, total: number): boolean {
+  return i === current || i === (current + 1) % total || i === (current - 1 + total) % total;
+}
+
 export default function WhyMagnumSlider() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  /* Only slides that have been shown get a real <Image>; the rest stay on
-     their inline placeholder until the carousel reaches them. */
-  const [mounted, setMounted] = useState<number[]>([0]);
   /* Autoplay waits until the section is actually on screen. */
   const [visible, setVisible] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -33,14 +35,6 @@ export default function WhyMagnumSlider() {
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    const next = (index + 1) % gallerySlides.length;
-    setMounted((seen) => {
-      const added = [index, next].filter((i) => !seen.includes(i));
-      return added.length ? [...seen, ...added] : seen;
-    });
-  }, [index]);
 
   useEffect(() => {
     if (paused || !visible) return;
@@ -73,7 +67,10 @@ export default function WhyMagnumSlider() {
             i === index ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          {mounted.includes(i) && (
+          {/* Only the outgoing, current and next slides carry a real <Image>:
+              the first keeps the fade intact, the last is prefetched so the
+              next transition never lands on an empty frame. */}
+          {isNear(i, index, gallerySlides.length) && (
             <Image
               src={slide.src}
               alt={slide.alt}
