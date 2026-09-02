@@ -42,11 +42,11 @@ export const gallerySlides: Slide[] = [
       'data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAsAA4BaJZACdAChnwqAghgA/n3aAxnAid1hOwF0/vjP4NhgX2tckhurE1Kl+YEEJ/HR0tx+NopU/SxBvgkU4o+ok65nSAA=',
   },
   {
-    src: '/gallery/Magnum6.webp',
-    alt: 'Forklift moving a pallet of genuine parts cartons across the Dubai warehouse floor',
+    src: '/gallery/Magnum8.webp',
+    alt: 'Forklift lifting a pallet of genuine parts cartons between stacked rows in the Dubai warehouse',
     caption: '',
     blurDataURL:
-      'data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoQAAsAA4BaJagCdAYsFVj2amP4wAAA/pk3jTfVCNq8oxtDuHG0+yRdEVZq2Iw4Sy2O40q+LOYMekh5QiUfgvqDdowiGBhRLGQwAo5MK3C3tmvMyAA=',
+      'data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAgCdASoQAAsAA4BaJagCdAYstuKisgPtV+AA/pQ3oqjLjXCkKmFXe9wwol/VAFMYD1nAgzjBnrCWNDbzISYSfOcvOsbbTi07nBVu98B7xA96XSk07NXWAAA=',
   },
   {
     src: '/gallery/Magnum7.webp',
